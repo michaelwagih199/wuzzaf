@@ -4,6 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.CompanyMain">
+    tools:context=".activities.CompanyMain"
+    android:background="@color/blue3">
 
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="@dimen/_18ssp"
+        android:background="@drawable/ic_rounded_transparent">
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Company"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:layout_marginBottom="@dimen/_18ssp"
+            android:textSize="@dimen/_24ssp"/>
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Requirement"
+            android:textColor="@color/ofWhite"
+            android:layout_marginTop="@dimen/_12ssp"
+            android:background="@drawable/ic_rounded_button_yellow"/>
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Result"
+            android:background="@drawable/ic_rounded_button_yellow"
+            android:layout_marginTop="@dimen/_12ssp"
+            android:textColor="@color/ofWhite"/>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,119 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.EmployCv">
+    tools:context=".activities.EmployCv"
+    android:background="@color/blue3">
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/ic_rounded_transparent"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/_18ssp"
+        android:paddingBottom="@dimen/_18ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_18ssp"
+            android:text="Your Skills"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/_24ssp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_4ssp"
+            android:layout_marginTop="@dimen/_12ssp"
+            android:layout_marginRight="@dimen/_4ssp"
+            android:hint="Name"
+            android:inputType="text"
+            android:textColor="@color/ofWhite" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_4ssp"
+            android:layout_marginTop="@dimen/_12ssp"
+            android:layout_marginRight="@dimen/_4ssp"
+            android:hint="Age"
+            android:inputType="text"
+            android:textColor="@color/ofWhite" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_4ssp"
+            android:layout_marginTop="@dimen/_12ssp"
+            android:layout_marginRight="@dimen/_4ssp"
+            android:hint="Phone"
+            android:inputType="phone"
+            android:textColor="@color/ofWhite" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_4ssp"
+            android:layout_marginTop="@dimen/_12ssp"
+            android:layout_marginRight="@dimen/_4ssp"
+            android:hint="collage"
+            android:inputType="text"
+            android:textColor="@color/ofWhite" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_4ssp"
+            android:layout_marginTop="@dimen/_12ssp"
+            android:layout_marginRight="@dimen/_4ssp"
+            android:hint="Degree"
+            android:inputType="text"
+            android:textColor="@color/ofWhite" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_4ssp"
+            android:layout_marginTop="@dimen/_12ssp"
+            android:layout_marginRight="@dimen/_4ssp"
+            android:hint="Grade"
+            android:inputType="text"
+            android:textColor="@color/ofWhite" />
+
+        <TextView
+            android:id="@+id/txtVSignIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12ssp"
+            android:text=" Upload Your Cv "
+            android:textAlignment="center"
+            android:textColor="@color/ofWhite"
+            android:textSize="@dimen/_12ssp" />
+
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_24ssp"
+            android:layout_marginTop="@dimen/_24ssp"
+            android:layout_marginRight="@dimen/_24ssp"
+            android:background="@drawable/ic_rounded_button_yellow"
+            android:text="Save"
+
+            android:textColor="@color/ofWhite"
+            android:textSize="@dimen/_18ssp"
+            android:textStyle="normal" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

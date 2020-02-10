@@ -6,8 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.example.wuzzaf.R;
 
@@ -17,6 +19,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private RadioButton rbAccountType;
     private RadioButton rBcompany;
     private Button btnLogin;
+    TextView txtVSignIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 //        rBcompany = (RadioButton) findViewById(R.id.rbCompany);
         btnLogin = (Button) findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(this);
+        txtVSignIn = (TextView) findViewById(R.id.txtVSignIn);
     }
 
     @Override
@@ -49,7 +53,13 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     }
 
                     finish();
+                    break ;
+
+                case R.id.txtVSignIn:
+                    Intent i = new Intent(this, SignIn.class);
+                    startActivity(i);
                     break;
+
             }
 
         }
