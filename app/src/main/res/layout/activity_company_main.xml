@@ -33,7 +33,7 @@
             android:textSize="@dimen/_24ssp"/>
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/btnCompanyRequirement"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Requirement"

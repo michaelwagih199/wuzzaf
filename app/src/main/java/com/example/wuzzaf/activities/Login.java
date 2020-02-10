@@ -32,6 +32,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         btnLogin = (Button) findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(this);
         txtVSignIn = (TextView) findViewById(R.id.txtVSignIn);
+        txtVSignIn.setOnClickListener(this);
     }
 
     @Override
