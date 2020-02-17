@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1004062358125",
+    "firebase_url": "https://jopproject-97e86.firebaseio.com",
+    "project_id": "jopproject-97e86",
+    "storage_bucket": "jopproject-97e86.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1004062358125:android:58b9cbc0e061ae28fd1d64",
+        "android_client_info": {
+          "package_name": "com.example.wuzzaf"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1004062358125-28fhv0cmbu4si0lqst6u377m6iletmca.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvoIIn19Eqxezm-uk7pfsaNlV9qdO-E64"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1004062358125-28fhv0cmbu4si0lqst6u377m6iletmca.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1004062358125-m3a5gopi84nr8gde319380vhfsn45kgc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.wuzzaf"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

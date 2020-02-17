@@ -25,7 +25,7 @@ public class CandidatMain extends AppCompatActivity implements View.OnClickListe
         if (v != null) {
             switch (v.getId()) {
                 case R.id.btnEmployCv:
-                    Intent i = new Intent(this, EmployCv.class);
+                    Intent i = new Intent(this, EmployCvActivity.class);
                     startActivity(i);
                     break;
             }

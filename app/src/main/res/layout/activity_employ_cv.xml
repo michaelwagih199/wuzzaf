@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.EmployCv"
+    tools:context=".activities.EmployCvActivity"
     android:background="@color/blue3">
 
     <LinearLayout
@@ -34,6 +34,8 @@
             android:textSize="@dimen/_24ssp" />
 
         <EditText
+
+            android:id="@+id/etNameEmploy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_4ssp"
@@ -44,6 +46,7 @@
             android:textColor="@color/ofWhite" />
 
         <EditText
+            android:id="@+id/etAgeEmploy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_4ssp"
@@ -54,6 +57,7 @@
             android:textColor="@color/ofWhite" />
 
         <EditText
+            android:id="@+id/etPhoneEmploy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_4ssp"
@@ -64,6 +68,7 @@
             android:textColor="@color/ofWhite" />
 
         <EditText
+            android:id="@+id/etCollegeEmploy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_4ssp"
@@ -74,6 +79,7 @@
             android:textColor="@color/ofWhite" />
 
         <EditText
+            android:id="@+id/etDegreeEmploy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_4ssp"
@@ -84,6 +90,7 @@
             android:textColor="@color/ofWhite" />
 
         <EditText
+            android:id="@+id/etGradeEmploy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_4ssp"
@@ -105,7 +112,7 @@
 
 
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnSaveEmployCv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_24ssp"

@@ -12,6 +12,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.wuzzaf.R;
+import com.example.wuzzaf.dao.UsersFirestoreManager;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
@@ -20,6 +21,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private RadioButton rBcompany;
     private Button btnLogin;
     TextView txtVSignIn;
+    private EditText etUserName, etPassword;
+    private UsersFirestoreManager usersFirestoreManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         btnLogin.setOnClickListener(this);
         txtVSignIn = (TextView) findViewById(R.id.txtVSignIn);
         txtVSignIn.setOnClickListener(this);
+        etUserName = (EditText) findViewById(R.id.etUserName);
+        etPassword = (EditText) findViewById(R.id.etPassword);
+        usersFirestoreManager = UsersFirestoreManager.newInstance();
+
     }
 
     @Override
@@ -40,24 +48,25 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         if (v != null) {
             switch (v.getId()) {
                 case R.id.btnLogin:
-                    // get selected radio button from radioGroup
-                    int selectedId = rgAccountType.getCheckedRadioButtonId();
-                    // find the radiobutton by returned id
-                    rbAccountType = (RadioButton) findViewById(selectedId);
-                    if (rbAccountType.getText().toString().equals("Candidate")) {
-                        Intent i = new Intent(this, CandidatMain.class);
-                        startActivity(i);
-
-                    } else if (rbAccountType.getText().toString().equals("Company")) {
-                        Intent i = new Intent(this, CompanyMain.class);
-                        startActivity(i);
+                    try {
+                        // get selected radio button from radioGroup
+                        int selectedId = rgAccountType.getCheckedRadioButtonId();
+                        // find the radiobutton by returned id
+                        rbAccountType = (RadioButton) findViewById(selectedId);
+                        if (!rbAccountType.getText().toString().isEmpty()) {
+                            usersFirestoreManager.isUser(etUserName.getText().toString(),
+                                    etPassword.getText().toString(),
+                                    rbAccountType.getText().toString(),
+                                    this);
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
 
-                    finish();
-                    break ;
+                    break;
 
                 case R.id.txtVSignIn:
-                    Intent i = new Intent(this, SignIn.class);
+                    Intent i = new Intent(this, Signup.class);
                     startActivity(i);
                     break;
 

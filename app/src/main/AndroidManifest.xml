@@ -13,10 +13,10 @@
         <activity android:name=".activities.CompanyResult" />
         <activity android:name=".activities.CompanyRequirment" />
         <activity android:name=".activities.JopSugisition" />
-        <activity android:name=".activities.EmployCv" />
+        <activity android:name=".activities.EmployCvActivity" />
         <activity android:name=".activities.CompanyMain" />
         <activity android:name=".activities.CandidatMain" />
-        <activity android:name=".activities.SignIn" />
+        <activity android:name=".activities.Signup" />
         <activity android:name=".activities.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

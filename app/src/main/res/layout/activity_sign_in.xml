@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.SignIn">
+    tools:context=".activities.Signup">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -27,6 +27,8 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <RadioGroup
+
+            android:id="@+id/rgAccountTypeSignUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -34,13 +36,15 @@
             android:orientation="horizontal">
 
             <RadioButton
+                android:id="@+id/rbAccountTypeSignUp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Candidate"
                 android:textColor="@color/ofWhite" />
 
             <RadioButton
+                android:id="@+id/rbCandidateTypeSignUp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -50,7 +54,7 @@
         </RadioGroup>
 
         <EditText
-            android:id="@+id/etFirstName"
+            android:id="@+id/etFirstNameSignUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_4ssp"
@@ -61,7 +65,7 @@
             android:textColor="@color/ofWhite" />
 
         <EditText
-            android:id="@+id/etLastName"
+            android:id="@+id/etLastNameSignUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_4ssp"
@@ -72,7 +76,7 @@
             android:textColor="@color/ofWhite" />
 
         <EditText
-            android:id="@+id/etUserName"
+            android:id="@+id/etUserNameSignUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_4ssp"
@@ -85,7 +89,7 @@
 
 
         <EditText
-            android:id="@+id/etPassword"
+            android:id="@+id/etPasswordSignUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_4ssp"
@@ -97,7 +101,7 @@
             android:textColor="@color/ofWhite" />
 
         <EditText
-            android:id="@+id/etConfirmPassword"
+            android:id="@+id/etConfirmPasswordSignUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_4ssp"
@@ -109,7 +113,7 @@
             android:textColor="@color/ofWhite" />
 
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnSignUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_12ssp"
