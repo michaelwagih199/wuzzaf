@@ -110,6 +110,17 @@
             android:textColor="@color/ofWhite"
             android:textSize="@dimen/_12ssp" />
 
+        <TextView
+            android:id="@+id/txtVcVId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12ssp"
+            android:text=" Upload Your Cv "
+            android:textAlignment="center"
+            android:visibility="gone"
+            android:textColor="@color/ofWhite"
+            android:textSize="@dimen/_12ssp" />
+
 
         <Button
             android:id="@+id/btnSaveEmployCv"

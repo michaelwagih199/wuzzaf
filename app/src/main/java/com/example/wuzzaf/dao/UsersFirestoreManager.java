@@ -2,12 +2,17 @@ package com.example.wuzzaf.dao;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 
 import com.example.wuzzaf.activities.CandidatMain;
 import com.example.wuzzaf.activities.CompanyMain;
 import com.example.wuzzaf.entities.Users;
+import com.example.wuzzaf.helpers.Constant;
+
+import com.example.wuzzaf.helpers.SharedPrefrenceHelper;
 import com.example.wuzzaf.helpers.ToastMessage;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -26,6 +31,8 @@ public class UsersFirestoreManager {
 
     private FirebaseFirestore firebaseFirestore;
     private CollectionReference contactsCollectionReference;
+    SharedPrefrenceHelper sharedPrefrenceHelper = new SharedPrefrenceHelper();
+
 
     public static UsersFirestoreManager newInstance() {
         if (usersFirestoreManager == null) {
@@ -61,10 +68,9 @@ public class UsersFirestoreManager {
 
     public void sendContactsBulk(String firstNameString, String lastNameString, String userName, String password, String userType) {
         createDocument(new Users(firstNameString, lastNameString, userName, password, userType));
-
     }
 
-    public void isUser(String userName, String password, final String userType, final Context context){
+    public void isUser(final String userName, String password, final String userType, final Context context){
         boolean isUser = false;
         contactsCollectionReference
                 .whereEqualTo("userType", userType)
@@ -81,16 +87,20 @@ public class UsersFirestoreManager {
                                 }else{
                                     if (userType.equals("Candidate")){
                                         Intent i = new Intent(context.getApplicationContext(), CandidatMain.class);
+                                        //i.putExtra("editFlag", Constant.updateFlag);4
+                                        sharedPrefrenceHelper.setUsername(context, userName);
                                         context.startActivity(i);
+
                                     }
                                     if (userType.equals("Company")){
                                         Intent i = new Intent(context.getApplicationContext(), CompanyMain.class);
+                                        sharedPrefrenceHelper.setUsername(context, userName);
                                         context.startActivity(i);
 
                                     }
 
                                 }
-                                //Log.d("tag", document.getId() + " => " + document.getData());
+                              //  Log.d("tag", document.getId() + " => " + document.getData());
                             }
                         } else {
                             ToastMessage.addMessage("false",context);

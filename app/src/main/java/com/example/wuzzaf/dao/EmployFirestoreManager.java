@@ -1,13 +1,33 @@
 package com.example.wuzzaf.dao;
 
+import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+
+import com.example.wuzzaf.activities.CandidatMain;
+import com.example.wuzzaf.activities.CompanyMain;
 import com.example.wuzzaf.entities.EmplyCv;
 import com.example.wuzzaf.entities.Users;
+import com.example.wuzzaf.helpers.SharedPrefrenceHelper;
+import com.example.wuzzaf.helpers.ToastMessage;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.List;
+
+import static androidx.constraintlayout.widget.Constraints.TAG;
 import static com.example.wuzzaf.firestoreStructure.EmployFirestoreDbContract.COLLECTION_NAME;
 
 public class EmployFirestoreManager {
@@ -17,6 +37,7 @@ public class EmployFirestoreManager {
 
     private FirebaseFirestore firebaseFirestore;
     private CollectionReference contactsCollectionReference;
+    SharedPrefrenceHelper sharedPrefrenceHelper = new SharedPrefrenceHelper();
 
     public static EmployFirestoreManager newInstance() {
         if (employFirestoreManager == null) {
@@ -39,8 +60,8 @@ public class EmployFirestoreManager {
         contactsCollectionReference.get().addOnCompleteListener(onCompleteListener);
     }
 
-    public void updateContact(EmplyCv contact) {
-        String documentId = contact.getDocumentId();
+    public void updateContact(EmplyCv contact,String documentId) {
+        //String documentId = contact.getDocumentId();
         DocumentReference documentReference = contactsCollectionReference.document(documentId);
         documentReference.set(contact);
     }
@@ -50,10 +71,65 @@ public class EmployFirestoreManager {
         documentReference.delete();
     }
 
-    public void sendContactsBulk(String name, String age, String phone, String collage, String degee, String grade) {
-        createDocument(new EmplyCv(name,age,phone,collage,degee,grade));
+    public void sendContactsBulk(String name, String age, String phone, String collage, String degee, String grade, String userName) {
+        createDocument(new EmplyCv(name, age, phone, collage, degee, grade, userName));
 
     }
+
+    public void popUI (String userName,
+                       final EditText name,
+                       final EditText age,
+                       final EditText phone,
+                       final EditText collage,
+                       final EditText degree,
+                       final EditText grade,
+                       final Button save,
+                       final TextView id,
+                       final Context context) {
+
+        contactsCollectionReference
+                .whereEqualTo("userName", userName)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                if (document.getData().isEmpty()) {
+                                    save.setText("Save");
+                                } else {
+
+                                    try {
+                                        save.setText("Update");
+                                        name.setText(document.getData().get("name").toString());
+                                        age.setText(document.getData().get("age").toString());
+                                        phone.setText(document.getData().get("phone").toString());
+                                        collage.setText(document.getData().get("collage").toString());
+                                        degree.setText(document.getData().get("degee").toString());
+                                        grade.setText(document.getData().get("grade").toString());
+                                        id.setText(document.getId());
+
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+
+                                }
+                                String  isAttendance =  document.getData().get("grade").toString();
+
+                                Log.d("tag", document.getId() + " => " + isAttendance);
+                            }
+
+                        } else {
+
+                            ToastMessage.addMessage("false", context);
+                            // Log.d("tag", "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
+
+    }
+
+
 
 
 }

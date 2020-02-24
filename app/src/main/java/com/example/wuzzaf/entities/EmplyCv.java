@@ -6,19 +6,20 @@ public class EmplyCv {
 
     @DocumentId
     private String documentId;
-    private String name,age,phone,collage,degee,grade;
+    private String name,age,phone,collage,degee,grade,userName;
 
     public EmplyCv() {
 
     }
 
-    public EmplyCv(String name, String age, String phone, String collage, String degee, String grade) {
+    public EmplyCv(String name, String age, String phone, String collage, String degee, String grade,String userName) {
         this.name = name;
         this.age = age;
         this.phone = phone;
         this.collage = collage;
         this.degee = degee;
         this.grade = grade;
+        this.userName = userName;
     }
 
     public String getName() {
@@ -75,5 +76,13 @@ public class EmplyCv {
 
     public void setDocumentId(String documentId) {
         this.documentId = documentId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }

@@ -12,6 +12,7 @@ import android.widget.RadioGroup;
 
 import com.example.wuzzaf.R;
 import com.example.wuzzaf.dao.UsersFirestoreManager;
+import com.example.wuzzaf.helpers.SharedPrefrenceHelper;
 import com.example.wuzzaf.helpers.ToastMessage;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -25,6 +26,7 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
     private Button btnSignUp;
 
     private UsersFirestoreManager usersFirestoreManager;
+    SharedPrefrenceHelper sharedPrefrenceHelper = new SharedPrefrenceHelper();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +57,7 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
                         etpassword.getText().toString(),
                         getRadioButton()
                 );
+
 
             } catch (Exception e) {
                 e.printStackTrace();
