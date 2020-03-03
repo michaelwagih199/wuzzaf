@@ -1,10 +1,20 @@
 package com.example.wuzzaf.dao;
+import android.content.Context;
+import android.util.Log;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
+import androidx.annotation.NonNull;
 import com.example.wuzzaf.entities.JopRequirements;
 import com.example.wuzzaf.helpers.SharedPrefrenceHelper;
+import com.example.wuzzaf.helpers.ToastMessage;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import static com.example.wuzzaf.firestoreStructure.JopRequirementsDb.JopRequirementsName;
@@ -52,8 +62,63 @@ public class JopRequirementsManager {
         documentReference.delete();
     }
 
-    public void sendContactsBulk(String documentId, String collage, String degree, String experienceYear, String age, String jopDescription, String id) {
-        createDocument(new JopRequirements(documentId, collage, degree, experienceYear, age,jopDescription,id));
+    public void sendContactsBulk(String collage, String degree, String grade, String experienceYear, String age,String jopTitle,String jopDescription, String id)  {
+        createDocument(new JopRequirements(collage, degree,grade, experienceYear, age, jopTitle , jopDescription , id));
     }
+
+    public void popUI (String userName,
+                       final EditText jopDescription,
+                       final EditText jopTitle,
+                       final EditText age,
+                       final Spinner collage,
+                       final EditText degree,
+                       final EditText ExperienceYear,
+                       final Spinner grade,
+                       final Button save,
+                       final TextView id,
+                       final Context context) {
+
+        contactsCollectionReference
+                .whereEqualTo("id", userName)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                if (document.getData().isEmpty()) {
+                                    save.setText("Save");
+                                } else {
+
+                                    try {
+                                        save.setText("Update");
+                                        jopDescription.setText(document.getData().get("jopDescription").toString());
+                                        jopTitle.setText(document.getData().get("jopTitle").toString());
+                                        age.setText(document.getData().get("age").toString());
+                                        degree.setText(document.getData().get("degree").toString());
+                                        ExperienceYear.setText(document.getData().get("experienceYear").toString());
+                                        id.setText(document.getId());
+
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+
+                                }
+                                String  isAttendance =  document.getData().get("grade").toString();
+
+                                Log.d("tag", document.getId() + " => " + isAttendance);
+                            }
+
+                        } else {
+
+                            ToastMessage.addMessage("false", context);
+                            // Log.d("tag", "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
+
+    }
+
+
 
 }

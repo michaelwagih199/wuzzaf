@@ -53,7 +53,7 @@
             android:layout_marginTop="@dimen/_12ssp"
             android:layout_marginRight="@dimen/_4ssp"
             android:hint="Age"
-            android:inputType="text"
+            android:inputType="number"
             android:textColor="@color/ofWhite" />
 
         <EditText
@@ -67,15 +67,15 @@
             android:inputType="phone"
             android:textColor="@color/ofWhite" />
 
-        <EditText
+        <Spinner
             android:id="@+id/etCollegeEmploy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_4ssp"
             android:layout_marginTop="@dimen/_12ssp"
             android:layout_marginRight="@dimen/_4ssp"
-            android:hint="collage"
-            android:inputType="text"
+            android:entries="@array/college"
+            android:padding="@dimen/_8ssp"
             android:textColor="@color/ofWhite" />
 
         <EditText
@@ -89,19 +89,50 @@
             android:inputType="text"
             android:textColor="@color/ofWhite" />
 
-        <EditText
+        <Spinner
             android:id="@+id/etGradeEmploy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_4ssp"
             android:layout_marginTop="@dimen/_12ssp"
             android:layout_marginRight="@dimen/_4ssp"
-            android:hint="Grade"
-            android:inputType="text"
+            android:entries="@array/grade"
+            android:padding="@dimen/_8ssp"
             android:textColor="@color/ofWhite" />
 
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etExperienceYearEmploy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/_4ssp"
+                android:layout_marginTop="@dimen/_12ssp"
+                android:layout_marginRight="@dimen/_4ssp"
+                android:hint="Experience Years"
+                android:inputType="number"
+                android:textColor="@color/ofWhite" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="years"
+                android:textColor="@color/colorAccent"
+                android:textAlignment="center"
+                android:textSize="@dimen/_12ssp"
+                android:layout_marginTop="@dimen/_8ssp"
+                />
+        </LinearLayout>
+
         <TextView
-            android:id="@+id/txtVSignIn"
+            android:id="@+id/txtVUpload"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_12ssp"
@@ -122,6 +153,7 @@
             android:textSize="@dimen/_12ssp" />
 
 
+
         <Button
             android:id="@+id/btnSaveEmployCv"
             android:layout_width="match_parent"
@@ -131,7 +163,6 @@
             android:layout_marginRight="@dimen/_24ssp"
             android:background="@drawable/ic_rounded_button_yellow"
             android:text="Save"
-
             android:textColor="@color/ofWhite"
             android:textSize="@dimen/_18ssp"
             android:textStyle="normal" />

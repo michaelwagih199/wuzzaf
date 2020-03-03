@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -71,8 +72,8 @@ public class EmployFirestoreManager {
         documentReference.delete();
     }
 
-    public void sendContactsBulk(String name, String age, String phone, String collage, String degee, String grade, String userName) {
-        createDocument(new EmplyCv(name, age, phone, collage, degee, grade, userName));
+    public void sendContactsBulk(String name, String age, String phone, String collage, String degee, String grade, String userName,String experienceYears) {
+        createDocument(new EmplyCv(name, age, phone, collage, degee, grade, userName,experienceYears));
 
     }
 
@@ -80,9 +81,10 @@ public class EmployFirestoreManager {
                        final EditText name,
                        final EditText age,
                        final EditText phone,
-                       final EditText collage,
+                       final EditText experienceYear,
+                       final Spinner collage,
                        final EditText degree,
-                       final EditText grade,
+                       final Spinner grade,
                        final Button save,
                        final TextView id,
                        final Context context) {
@@ -103,10 +105,9 @@ public class EmployFirestoreManager {
                                         save.setText("Update");
                                         name.setText(document.getData().get("name").toString());
                                         age.setText(document.getData().get("age").toString());
+                                        experienceYear.setText(document.getData().get("experienceYears").toString());
                                         phone.setText(document.getData().get("phone").toString());
-                                        collage.setText(document.getData().get("collage").toString());
                                         degree.setText(document.getData().get("degee").toString());
-                                        grade.setText(document.getData().get("grade").toString());
                                         id.setText(document.getId());
 
                                     } catch (Exception e) {

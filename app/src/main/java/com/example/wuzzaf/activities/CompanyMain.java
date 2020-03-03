@@ -9,8 +9,9 @@ import android.widget.Button;
 
 import com.example.wuzzaf.R;
 
+
 public class CompanyMain extends AppCompatActivity implements View.OnClickListener {
-    Button btnCompanyRequirment;
+    Button btnCompanyRequirment, btnCompanyResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +19,8 @@ public class CompanyMain extends AppCompatActivity implements View.OnClickListen
         setContentView(R.layout.activity_company_main);
         btnCompanyRequirment = (Button) findViewById(R.id.btnCompanyRequirement);
         btnCompanyRequirment.setOnClickListener(this);
+        btnCompanyResult = (Button) findViewById(R.id.btnCompanyResult);
+        btnCompanyResult.setOnClickListener(this);
     }
 
     @Override
@@ -27,6 +30,10 @@ public class CompanyMain extends AppCompatActivity implements View.OnClickListen
                 case R.id.btnCompanyRequirement:
                     Intent i = new Intent(this, CompanyRequirment.class);
                     startActivity(i);
+                    break;
+                case R.id.btnCompanyResult:
+                    Intent intent = new Intent(this, CompanyResult.class);
+                    startActivity(intent);
                     break;
 
 

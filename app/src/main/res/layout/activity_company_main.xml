@@ -42,7 +42,7 @@
             android:background="@drawable/ic_rounded_button_yellow"/>
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/btnCompanyResult"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Result"

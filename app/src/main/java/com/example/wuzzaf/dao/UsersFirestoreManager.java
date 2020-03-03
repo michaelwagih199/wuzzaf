@@ -90,7 +90,6 @@ public class UsersFirestoreManager {
                                         //i.putExtra("editFlag", Constant.updateFlag);4
                                         sharedPrefrenceHelper.setUsername(context, userName);
                                         context.startActivity(i);
-
                                     }
                                     if (userType.equals("Company")){
                                         Intent i = new Intent(context.getApplicationContext(), CompanyMain.class);

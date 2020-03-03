@@ -5,19 +5,20 @@ import com.google.firebase.firestore.DocumentId;
 public class JopRequirements {
     @DocumentId
     private String documentId;
-   private String collage,degree,ExperienceYear,Age,JopDescription,id;
+   private String collage,degree,grade,experienceYear,age,jopTitle,jopDescription,id;
 
     public JopRequirements() {
     }
 
-    public JopRequirements(String documentId, String collage, String degree, String experienceYear, String age, String jopDescription, String id) {
-        this.documentId = documentId;
+    public JopRequirements(String collage, String degree, String grade, String experienceYear, String age, String jopTitle, String jopDescription, String id) {
         this.collage = collage;
         this.degree = degree;
-        ExperienceYear = experienceYear;
-        Age = age;
-        JopDescription = jopDescription;
+        this.grade = grade;
+        this.experienceYear = experienceYear;
+        this.age = age;
+        this.jopDescription = jopDescription;
         this.id = id;
+        this.jopTitle = jopTitle;
     }
 
     public String getDocumentId() {
@@ -44,28 +45,36 @@ public class JopRequirements {
         this.degree = degree;
     }
 
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
     public String getExperienceYear() {
-        return ExperienceYear;
+        return experienceYear;
     }
 
     public void setExperienceYear(String experienceYear) {
-        ExperienceYear = experienceYear;
+        this.experienceYear = experienceYear;
     }
 
     public String getAge() {
-        return Age;
+        return age;
     }
 
     public void setAge(String age) {
-        Age = age;
+        this.age = age;
     }
 
     public String getJopDescription() {
-        return JopDescription;
+        return jopDescription;
     }
 
     public void setJopDescription(String jopDescription) {
-        JopDescription = jopDescription;
+        this.jopDescription = jopDescription;
     }
 
     public String getId() {
@@ -74,5 +83,13 @@ public class JopRequirements {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getJopTitle() {
+        return jopTitle;
+    }
+
+    public void setJopTitle(String jopTitle) {
+        this.jopTitle = jopTitle;
     }
 }

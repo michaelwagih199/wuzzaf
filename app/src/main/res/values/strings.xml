@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">JOP</string>
+
+    <string-array name="college">
+        <item>choose college </item>
+        <item>Computer Science</item>
+        <item>Information System</item>
+        <item>Accounts</item>
+    </string-array>
+
+    <string-array name="experienceYear">
+        <item>choose experience years </item>
+        <item>fresh graduate</item>
+        <item>1-2 experience year</item>
+        <item>2-4  experience year </item>
+        <item>more than 4 years </item>
+
+    </string-array>
+
+    <string-array name="grade">
+        <item>choose grade </item>
+        <item>A+</item>
+        <item>A</item>
+        <item>B+</item>
+        <item>B</item>
+        <item>C+</item>
+        <item>C</item>
+        <item>D</item>
+    </string-array>
+
 </resources>
