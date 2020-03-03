@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.uploadFile"></activity>
+        <activity android:name=".activities.JobSuggestionDetails"></activity>
+        <activity android:name=".activities.uploadFile" />
         <activity android:name=".activities.EmployResult" />
         <activity android:name=".activities.CompanyResult" />
         <activity android:name=".activities.CompanyRequirment" />
@@ -32,7 +33,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.MainActivity"></activity>
+        <activity android:name=".activities.MainActivity" />
     </application>
 
 </manifest>

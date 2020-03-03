@@ -35,13 +35,13 @@
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnJobSuggest"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
-        android:text="Jop Sugisition"
+        android:text="job suggestions"
         android:textSize="@dimen/_18ssp"
         android:textColor="@color/ofWhite"
         android:background="@drawable/ic_rounded_button_yellow"
@@ -50,7 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnEmployCv" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnEmployResult"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -62,7 +62,7 @@
         android:background="@drawable/ic_rounded_button_yellow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnJobSuggest" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
