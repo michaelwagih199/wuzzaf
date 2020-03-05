@@ -130,12 +130,12 @@ public class JopRequirementsManager {
 
     }
 
-    public void getData(final Context context, final RecyclerView recyclerView,String college,String experyear,String grade) {
+    public void getData(final Context context, final RecyclerView recyclerView, String college, String experyear, String grade) {
 
         contactsCollectionReference
                 .whereEqualTo("collage", college)
-                .whereEqualTo("experienceYears",experyear)
-                .whereEqualTo("grade",grade)
+                .whereEqualTo("experienceYears", experyear)
+                .whereEqualTo("grade", grade)
                 .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -173,4 +173,61 @@ public class JopRequirementsManager {
         });
 
     }
+
+
+    public void pupDetailsUi(final String userName,
+                             final TextView jopDescription,
+                             final TextView companyName,
+                             final TextView jopTitle,
+                             final TextView age,
+                             final TextView collage,
+                             final TextView degree,
+                             final TextView ExperienceYear,
+                             final TextView grade,
+                             final TextView id,
+                             final Context context) {
+
+        contactsCollectionReference
+                .whereEqualTo("id", userName)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                if (document.getData().isEmpty()) {
+
+                                } else {
+
+                                    try {
+                                        companyName.setText(userName);
+                                        jopDescription.setText(document.getData().get("jopDescription").toString());
+                                        jopTitle.setText(document.getData().get("jopTitle").toString());
+                                        age.setText(document.getData().get("age").toString());
+                                        degree.setText(document.getData().get("degree").toString());
+                                        ExperienceYear.setText(document.getData().get("experienceYear").toString());
+                                        collage.setText(document.getData().get("collage").toString());
+                                        grade.setText(document.getData().get("grade").toString());
+                                        id.setText(document.getId());
+
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+
+                                }
+
+//                                Log.d("tag", document.getId() + " => " + isAttendance);
+                            }
+
+                        } else {
+
+                            ToastMessage.addMessage("false", context);
+                            // Log.d("tag", "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
+
+    }
+
+
 }
