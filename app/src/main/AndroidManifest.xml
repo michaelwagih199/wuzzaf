@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.JobSuggestionDetails"></activity>
+        <activity android:name=".activities.EmploySuggetDetails"></activity>
+        <activity android:name=".activities.JobSuggestionDetails" />
         <activity android:name=".activities.uploadFile" />
         <activity android:name=".activities.EmployResult" />
         <activity android:name=".activities.CompanyResult" />

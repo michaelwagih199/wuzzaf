@@ -33,6 +33,7 @@ class JobSuggestionDetails : AppCompatActivity(), View.OnClickListener {
     var userName :String? ="m"
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_job_suggestion_details)
         mContext = this

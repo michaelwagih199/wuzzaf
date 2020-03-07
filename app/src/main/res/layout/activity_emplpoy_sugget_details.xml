@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.EmploySuggetDetails">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/ic_rounded_transparent2"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/_18ssp"
+        android:paddingBottom="@dimen/_18ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvEmployNameD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_18ssp"
+            android:text="employ Name"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/_24ssp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvEmpAgeD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_4ssp"
+            android:layout_marginTop="@dimen/_12ssp"
+            android:layout_marginRight="@dimen/_4ssp"
+            android:text="age"
+            android:textColor="@color/ofWhite"
+            android:textSize="@dimen/_14ssp" />
+
+        <TextView
+            android:textSize="@dimen/_14ssp"
+            android:id="@+id/tvEmpPhoneD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_4ssp"
+            android:layout_marginTop="@dimen/_12ssp"
+            android:layout_marginRight="@dimen/_4ssp"
+            android:text="phone"
+            android:textColor="@color/ofWhite" />
+
+        <TextView
+            android:id="@+id/tvEmpCollegeD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_4ssp"
+            android:layout_marginTop="@dimen/_12ssp"
+            android:layout_marginRight="@dimen/_4ssp"
+            android:textSize="@dimen/_14ssp"
+            android:text="college"
+            android:textColor="@color/ofWhite" />
+
+        <TextView
+            android:id="@+id/tvEmpDegreeD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_4ssp"
+            android:layout_marginTop="@dimen/_12ssp"
+            android:layout_marginRight="@dimen/_4ssp"
+            android:text="deree"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/ofWhite" />
+
+        <TextView
+            android:id="@+id/tvEmpGradeD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_4ssp"
+            android:layout_marginTop="@dimen/_12ssp"
+            android:layout_marginRight="@dimen/_4ssp"
+            android:text="grade"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/ofWhite" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvEmpYearD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4ssp"
+                android:layout_marginTop="@dimen/_12ssp"
+                android:layout_marginRight="@dimen/_4ssp"
+                android:layout_weight="1"
+                android:text="year"
+                android:textSize="@dimen/_14ssp"
+                android:textColor="@color/ofWhite" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8ssp"
+                android:layout_weight="1"
+                android:text="years"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_12ssp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvIdD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12ssp"
+            android:textAlignment="center"
+            android:textColor="@color/ofWhite"
+            android:textSize="@dimen/_12ssp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnAcceptCv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_24ssp"
+            android:layout_marginTop="@dimen/_24ssp"
+            android:layout_marginRight="@dimen/_24ssp"
+            android:background="@drawable/ic_rounded_button_white"
+            android:text="Accept CV"
+            android:textColor="@color/ofWhite"
+            android:textSize="@dimen/_18ssp"
+            android:textStyle="normal" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

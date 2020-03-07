@@ -1,7 +1,6 @@
 package com.example.wuzzaf.dao;
 
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
@@ -9,26 +8,31 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.wuzzaf.activities.CandidatMain;
-import com.example.wuzzaf.activities.CompanyMain;
+import com.example.wuzzaf.Adapters.EmploySugesstionAdapter;
+import com.example.wuzzaf.Adapters.JobSugesstionAdapter;
+
 import com.example.wuzzaf.entities.EmplyCv;
-import com.example.wuzzaf.entities.Users;
+import com.example.wuzzaf.entities.JopRequirements;
+
 import com.example.wuzzaf.helpers.SharedPrefrenceHelper;
 import com.example.wuzzaf.helpers.ToastMessage;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
+
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
 import java.util.List;
 
-import static androidx.constraintlayout.widget.Constraints.TAG;
 import static com.example.wuzzaf.firestoreStructure.EmployFirestoreDbContract.COLLECTION_NAME;
 
 public class EmployFirestoreManager {
@@ -129,6 +133,7 @@ public class EmployFirestoreManager {
                 });
 
     }
+
 
 
 
