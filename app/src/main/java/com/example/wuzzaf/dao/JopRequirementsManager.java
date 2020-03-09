@@ -131,11 +131,10 @@ public class JopRequirementsManager {
     }
 
     public void getData(final Context context, final RecyclerView recyclerView, String college, String experyear, String grade) {
-
         contactsCollectionReference
                 .whereEqualTo("collage", college)
-                .whereEqualTo("experienceYears", experyear)
-                .whereEqualTo("grade", grade)
+//                .whereLessThan("experienceYear", experyear)
+//                .whereEqualTo("grade", grade)
                 .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {

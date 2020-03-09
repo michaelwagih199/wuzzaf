@@ -179,7 +179,44 @@ public class EmployFirestoreManager {
 
     }
 
+    public void popUISuggest (String userName,
+                        final TextView experienceYear,
+                        final TextView collage,
+                        final TextView grade,
+                        final Context context) {
 
+        contactsCollectionReference
+                .whereEqualTo("userName", userName)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                if (document.getData().isEmpty()) {
+
+                                } else {
+
+                                    try {
+
+                                        experienceYear.setText(document.getData().get("experienceYears").toString());
+                                        collage.setText(document.getData().get("collage").toString());
+                                        grade.setText(document.getData().get("grade").toString());
+
+
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+
+                                }
+
+                            }
+
+                        }
+                    }
+                });
+
+    }
 
 
 }

@@ -14,14 +14,13 @@ class EmployResult : AppCompatActivity(), View.OnClickListener {
     lateinit var txtVResult: TextView
     lateinit var btnBack: Button
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_employ_result)
         mcontext = this
         txtVResult = findViewById(R.id.tvEmployCvResult)
         btnBack = findViewById(R.id.btnEmpResult)
         txtVResult.setOnClickListener(this)
-
-
 
     }
 
