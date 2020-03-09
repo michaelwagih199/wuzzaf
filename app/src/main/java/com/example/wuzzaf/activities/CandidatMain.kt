@@ -17,6 +17,7 @@ class CandidatMain : AppCompatActivity(), View.OnClickListener {
     lateinit var mContext: Context
     var btnEmployCv: Button? = null
     var btnJobSuggest: Button? = null
+    var btnResult: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +25,8 @@ class CandidatMain : AppCompatActivity(), View.OnClickListener {
         btnEmployCv = findViewById<View>(R.id.btnEmployCv) as Button
         btnEmployCv!!.setOnClickListener(this)
         btnJobSuggest = findViewById<View>(R.id.btnJobSuggest) as Button
+        btnResult = findViewById(R.id.btnEmployResult)
+        btnResult!!.setOnClickListener(this)
         btnJobSuggest!!.setOnClickListener(this)
         employFirestoreManager = EmployFirestoreManager.newInstance()
         mContext = this
@@ -43,6 +46,12 @@ class CandidatMain : AppCompatActivity(), View.OnClickListener {
 
                 R.id.btnJobSuggest -> {
                     val intent = Intent(this, JopSugisition::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+
+                R.id.btnEmployResult -> {
+                    val intent = Intent(this, EmployResult::class.java)
                     startActivity(intent)
                     finish()
                 }

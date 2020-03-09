@@ -30,7 +30,7 @@
             android:lines="5"
             android:maxLines="12"
             android:layout_weight="1"
-            android:text="congratulation"
+            android:text=" waiting for any company see your cv "
             android:textAlignment="center"
             android:textColor="@color/ofWhite"
             android:textSize="@dimen/_30ssp" />
