@@ -87,7 +87,7 @@ class JobSuggestionDetails : AppCompatActivity(), View.OnClickListener {
     fun applyJob(){
         employApplyOrderManager!!.sendContactsBulk(nodeId,userName)
         ToastMessage.addMessage("You applied for job",mContext)
-        val i = Intent(this, CandidatMain::class.java)
+        val i = Intent(this, CompanyMain::class.java)
         startActivity(i)
         finish()
     }

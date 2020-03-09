@@ -28,10 +28,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import static com.example.wuzzaf.firestoreStructure.EmployFirestoreDbContract.COLLECTION_NAME;
 
@@ -134,6 +131,53 @@ public class EmployFirestoreManager {
 
     }
 
+
+    public void popUID (String userName,
+                       final TextView name,
+                       final TextView age,
+                       final TextView phone,
+                       final TextView experienceYear,
+                       final TextView collage,
+                       final TextView degree,
+                       final TextView grade,
+                       final TextView id,
+                       final Context context) {
+
+        contactsCollectionReference
+                .whereEqualTo("userName", userName)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                if (document.getData().isEmpty()) {
+
+                                } else {
+
+                                    try {
+                                        name.setText(document.getData().get("name").toString());
+                                        age.setText(document.getData().get("age").toString());
+                                        experienceYear.setText(document.getData().get("experienceYears").toString());
+                                        phone.setText(document.getData().get("phone").toString());
+                                        degree.setText(document.getData().get("degee").toString());
+                                        collage.setText(document.getData().get("collage").toString());
+                                        grade.setText(document.getData().get("grade").toString());
+                                        id.setText(document.getId());
+
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+
+                                }
+
+                            }
+
+                        }
+                    }
+                });
+
+    }
 
 
 
