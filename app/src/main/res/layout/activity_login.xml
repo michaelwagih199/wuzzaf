@@ -74,17 +74,33 @@
             android:textColor="@color/ofWhite"
             android:inputType="text" />
 
-        <EditText
-            android:id="@+id/etPassword"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_16ssp"
-            android:layout_marginTop="@dimen/_12ssp"
             android:layout_marginRight="@dimen/_16ssp"
-            android:hint="Password"
-            android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
-            android:textColor="@color/ofWhite"
-            android:inputType="textPassword" />
+            android:layout_marginLeft="@dimen/_16ssp">
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10ssp"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColor="@color/ofWhite" />
+
+            <ImageView
+                android:id="@+id/imgPasswordEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_10ssp"
+                android:src="@drawable/ic_visibility_white_24dp" />
+
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/btnLogin"

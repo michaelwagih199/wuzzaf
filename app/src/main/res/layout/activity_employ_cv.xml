@@ -4,168 +4,176 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.EmployCvActivity"
-    android:background="@color/blue3">
+    android:background="@color/blue3"
+    tools:context=".activities.EmployCvActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/ic_rounded_transparent"
-        android:orientation="vertical"
-        android:paddingTop="@dimen/_18ssp"
-        android:paddingBottom="@dimen/_18ssp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_18ssp"
-            android:text="Your Skills"
-            android:textAlignment="center"
-            android:textColor="@color/colorAccent"
-            android:textSize="@dimen/_24ssp" />
-
-        <EditText
-
-            android:id="@+id/etNameEmploy"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_4ssp"
-            android:layout_marginTop="@dimen/_12ssp"
-            android:layout_marginRight="@dimen/_4ssp"
-            android:hint="Name"
-            android:inputType="text"
-            android:textColor="@color/ofWhite" />
-
-        <EditText
-            android:id="@+id/etAgeEmploy"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_4ssp"
-            android:layout_marginTop="@dimen/_12ssp"
-            android:layout_marginRight="@dimen/_4ssp"
-            android:hint="Age"
-            android:inputType="number"
-            android:textColor="@color/ofWhite" />
-
-        <EditText
-            android:id="@+id/etPhoneEmploy"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_4ssp"
-            android:layout_marginTop="@dimen/_12ssp"
-            android:layout_marginRight="@dimen/_4ssp"
-            android:hint="Phone"
-            android:inputType="phone"
-            android:textColor="@color/ofWhite" />
-
-        <Spinner
-            android:id="@+id/etCollegeEmploy"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_4ssp"
-            android:layout_marginTop="@dimen/_12ssp"
-            android:layout_marginRight="@dimen/_4ssp"
-            android:entries="@array/college"
-            android:padding="@dimen/_8ssp"
-            android:textColor="@color/ofWhite" />
-
-        <EditText
-            android:id="@+id/etDegreeEmploy"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_4ssp"
-            android:layout_marginTop="@dimen/_12ssp"
-            android:layout_marginRight="@dimen/_4ssp"
-            android:hint="Degree"
-            android:inputType="text"
-            android:textColor="@color/ofWhite" />
-
-        <Spinner
-            android:id="@+id/etGradeEmploy"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_4ssp"
-            android:layout_marginTop="@dimen/_12ssp"
-            android:layout_marginRight="@dimen/_4ssp"
-            android:entries="@array/grade"
-            android:padding="@dimen/_8ssp"
-            android:textColor="@color/ofWhite" />
-
-
-
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/ic_rounded_transparent"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_18ssp"
+            android:paddingBottom="@dimen/_18ssp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_18ssp"
+                android:text="Your Skills"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_24ssp" />
 
             <EditText
-                android:id="@+id/etExperienceYearEmploy"
-                android:layout_width="wrap_content"
+
+                android:id="@+id/etNameEmploy"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginLeft="@dimen/_4ssp"
                 android:layout_marginTop="@dimen/_12ssp"
                 android:layout_marginRight="@dimen/_4ssp"
-                android:hint="Experience Years"
+                android:hint="Name"
+                android:inputType="text"
+                android:textColor="@color/ofWhite" />
+
+            <EditText
+                android:id="@+id/etAgeEmploy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4ssp"
+                android:layout_marginTop="@dimen/_12ssp"
+                android:layout_marginRight="@dimen/_4ssp"
+                android:hint="Age"
                 android:inputType="number"
                 android:textColor="@color/ofWhite" />
 
-            <TextView
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/etPhoneEmploy"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="years"
-                android:textColor="@color/colorAccent"
+                android:layout_marginLeft="@dimen/_4ssp"
+                android:layout_marginTop="@dimen/_12ssp"
+                android:layout_marginRight="@dimen/_4ssp"
+                android:hint="Phone"
+                android:inputType="phone"
+                android:textColor="@color/ofWhite" />
+
+            <Spinner
+                android:id="@+id/etCollegeEmploy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4ssp"
+                android:layout_marginTop="@dimen/_12ssp"
+                android:layout_marginRight="@dimen/_4ssp"
+                android:entries="@array/college"
+                android:padding="@dimen/_8ssp"
+                android:textColor="@color/ofWhite" />
+
+            <EditText
+                android:id="@+id/etDegreeEmploy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4ssp"
+                android:layout_marginTop="@dimen/_12ssp"
+                android:layout_marginRight="@dimen/_4ssp"
+                android:hint="Degree"
+                android:inputType="text"
+                android:textColor="@color/ofWhite" />
+
+            <Spinner
+                android:id="@+id/etGradeEmploy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4ssp"
+                android:layout_marginTop="@dimen/_12ssp"
+                android:layout_marginRight="@dimen/_4ssp"
+                android:entries="@array/grade"
+                android:padding="@dimen/_8ssp"
+                android:textColor="@color/ofWhite" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/etExperienceYearEmploy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4ssp"
+                    android:layout_marginTop="@dimen/_12ssp"
+                    android:layout_marginRight="@dimen/_4ssp"
+                    android:layout_weight="1"
+                    android:hint="Experience Years"
+                    android:inputType="number"
+                    android:textColor="@color/ofWhite" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8ssp"
+                    android:layout_weight="1"
+                    android:text="years"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/_12ssp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtVUpload"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12ssp"
+                android:text=" Upload Your Cv "
                 android:textAlignment="center"
+                android:textColor="@color/ofWhite"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/txtVcVId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12ssp"
+                android:text=" Upload Your Cv "
+                android:textAlignment="center"
+                android:textColor="@color/ofWhite"
                 android:textSize="@dimen/_12ssp"
-                android:layout_marginTop="@dimen/_8ssp"
-                />
+                android:visibility="gone" />
+
+
+            <Button
+                android:id="@+id/btnSaveEmployCv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_24ssp"
+                android:layout_marginTop="@dimen/_24ssp"
+                android:layout_marginRight="@dimen/_24ssp"
+                android:background="@drawable/ic_rounded_button_yellow"
+                android:text="Save"
+                android:textColor="@color/ofWhite"
+                android:textSize="@dimen/_18ssp"
+                android:textStyle="normal" />
+
         </LinearLayout>
+    </ScrollView>
 
-        <TextView
-            android:id="@+id/txtVUpload"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_12ssp"
-            android:text=" Upload Your Cv "
-            android:textAlignment="center"
-            android:textColor="@color/ofWhite"
-            android:textSize="@dimen/_12ssp" />
-
-        <TextView
-            android:id="@+id/txtVcVId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_12ssp"
-            android:text=" Upload Your Cv "
-            android:textAlignment="center"
-            android:visibility="gone"
-            android:textColor="@color/ofWhite"
-            android:textSize="@dimen/_12ssp" />
-
-
-
-        <Button
-            android:id="@+id/btnSaveEmployCv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_24ssp"
-            android:layout_marginTop="@dimen/_24ssp"
-            android:layout_marginRight="@dimen/_24ssp"
-            android:background="@drawable/ic_rounded_button_yellow"
-            android:text="Save"
-            android:textColor="@color/ofWhite"
-            android:textSize="@dimen/_18ssp"
-            android:textStyle="normal" />
-
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
