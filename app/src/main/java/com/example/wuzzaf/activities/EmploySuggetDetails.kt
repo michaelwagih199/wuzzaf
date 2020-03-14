@@ -84,7 +84,7 @@ class EmploySuggetDetails : AppCompatActivity(), View.OnClickListener {
         //set title for alert dialog
         builder.setTitle("Accept Application")
         //set message for alert dialog
-        builder.setMessage("Are you shore to accept this cv")
+        builder.setMessage("Are you sure to accept this cv")
 //        builder.setIcon(androi)
 
         //performing positive action
